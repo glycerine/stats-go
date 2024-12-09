@@ -62,17 +62,19 @@ type StdDevTracker struct {
 	Q float64
 }
 
-// Mean return the weighted mean.
+// Mean returns the weighted mean.
 func (s *StdDevTracker) Mean() float64 {
 	return s.A
 }
 
-// SampleStdDev return the weighted sample standard deviation.
+// SampleStdDev returns the weighted sample standard deviation.
 func (s *StdDevTracker) SampleStdDev() float64 {
 	wvar := s.Q / s.W
 	return math.Sqrt(wvar * s.W / (s.W - 1))
 }
 
+// AddObs adds the observation x with the given weight
+// to the tracker.
 func (s *StdDevTracker) AddObs(x float64, weight float64) {
 
 	// W is the sum of all weights seen.
