@@ -36,7 +36,7 @@ import (
 
 // StdDevTracker tracks the running stddev and mean
 // as each observation is added with AddObs(). Use
-// the methods Mean() and SampleStdDev() to retreive
+// the methods Mean() and SampleStdDev() to retrieve
 // the summary statistics.
 //
 // Algorithm reference:
