@@ -89,9 +89,9 @@ func (s *StdDevTracker) AddObs(x float64, weight float64) {
 	s.Q += weight * (x - a0i) * (x - s.A)
 }
 
-// MeanAndSampleStdDev returns the mean and sample standard
+// MeanSd returns the mean and sample standard
 // deviation using the observations in x.
-func MeanAndSampleStdDev(x []float64) (mean, stddev float64) {
+func MeanSd(x []float64) (mean, stddev float64) {
 	var sdt StdDevTracker
 	for _, v := range x {
 		sdt.AddObs(v, 1)
