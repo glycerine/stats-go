@@ -80,14 +80,14 @@ func (s *StdDevTracker) AddObs(x float64, weight float64) {
 	s.W += weight
 
 	// need to save the old value for the updates below.
-	a0i := s.A
+	a0 := s.A
 
 	// A is the weighted mean
-	s.A = a0i + weight*(x-a0i)/s.W
+	s.A = a0 + weight*(x-a0)/s.W
 
 	// update the quadratic term.
 	// Q/W gives the weighted variance, when needed.
-	s.Q += weight * (x - a0i) * (x - s.A)
+	s.Q += weight * (x - a0) * (x - s.A)
 }
 
 // MeanSd returns the mean and sample standard
