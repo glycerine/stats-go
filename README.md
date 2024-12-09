@@ -9,8 +9,11 @@ sample standard deviation for a given set of
 observations.
 
 For efficiency, we demonstrate here how
-to calculate these both with a single pass
-over the data. We make only one call to:
+to calculate both these statistics with a single pass
+over the data. 
+
+The implementation of StdDevTracker could easily
+be inlined into a production version of this function.
 
 ~~~
 // MeanAndSampleStdDev returns the mean and sample standard
