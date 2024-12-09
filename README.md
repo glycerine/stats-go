@@ -17,7 +17,7 @@ be inlined into a production version of this function.
 
 ~~~
 // MeanSd returns the mean and sample standard
-// deviation using the observations in x.
+// deviation from a single pass through the observations in x.
 func MeanSd(x []float64) (mean, stddev float64)
 	var sdt StdDevTracker
 	for _, v := range x {
