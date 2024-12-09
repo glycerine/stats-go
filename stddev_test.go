@@ -43,7 +43,7 @@ func TestStdDevTracker(t *testing.T) {
 	const expectedMean = 0.1036679824039587055617
 	const expectedSD = 1.012965904917213721959
 
-	mean, sd := MeanAndSampleStdDev(data)
+	mean, sd := MeanSd(data)
 	if math.Abs(mean-expectedMean) > 1e-8 {
 		t.Errorf("observed mean = %g, want %g", mean, expectedMean)
 	}

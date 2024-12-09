@@ -69,8 +69,7 @@ func (s *StdDevTracker) Mean() float64 {
 
 // SampleStdDev returns the weighted sample standard deviation.
 func (s *StdDevTracker) SampleStdDev() float64 {
-	wvar := s.Q / s.W
-	return math.Sqrt(wvar * s.W / (s.W - 1))
+	return math.Sqrt(s.Q / (s.W - 1))
 }
 
 // AddObs adds the observation x with the given weight
