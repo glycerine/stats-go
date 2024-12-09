@@ -16,9 +16,9 @@ The implementation of StdDevTracker could easily
 be inlined into a production version of this function.
 
 ~~~
-// MeanAndSampleStdDev returns the mean and sample standard
+// MeanSd returns the mean and sample standard
 // deviation using the observations in x.
-func MeanAndSampleStdDev(x []float64) (mean, stddev float64)
+func MeanSd(x []float64) (mean, stddev float64)
 	var sdt StdDevTracker
 	for _, v := range x {
 		sdt.AddObs(v, 1)
